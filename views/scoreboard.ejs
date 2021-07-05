@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Scoreboard</h1>
+   
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i = 0; i < items.length; i++) { %>
+                    <tr>
+                        <!-- <td><%= i + 1 %></td> -->
+                        <% if(i==items.length || i==0){%>
+                        <td><%= i + 1 %></td>
+                        <% } else { %>
+                        <%if(items[i-1].score == items[i].score) {%>
+                            <td><%= i  %></td>
+                            
+                            <% }else {%>
+                            <td><%= i+1  %></td>
+                            <% } %>                
+                            <% } %>
+                    
+                        <td><%=items[i].name%></td>
+                        <td><%=items[i].score%></td>
+                        
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+</body>
+</html>
